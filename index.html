@@ -444,54 +444,94 @@
     if (y) y.textContent = new Date().getFullYear();
   })();
 
-  // --- Mailto-Formulare: robust, findet verschiedene Varianten automatisch ---
-  function attachMailto(form, subject) {
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  function buildBodyFromForm(form){
+    const fields = form.querySelectorAll('input, textarea, select');
+    const lines = [];
+    fields.forEach(el => {
+      if (el.type === 'hidden' || el.type === 'submit' || el.disabled) return;
+      const label =
+        el.closest('label')?.querySelector('span')?.textContent?.trim() ||
+        el.previousElementSibling?.textContent?.trim() ||
+        el.name || 'Feld';
+      const val = (el.value || '').toString().trim();
+      if (val) lines.push(label + ': ' + val);
+    });
+    return lines.join('\n');
+  }
 
-      const fields = form.querySelectorAll('input, textarea, select');
-      const lines = [];
-      fields.forEach(el => {
-        if (el.type === 'hidden' || el.type === 'submit' || el.disabled) return;
-        const label =
-          el.closest('label')?.querySelector('span')?.textContent?.trim() ||
-          el.previousElementSibling?.textContent?.trim() ||
-          el.name || 'Feld';
-        const val = (el.value || '').toString().trim();
-        if (val) lines.push(label + ': ' + val);
-      });
-
-      const body = lines.join('\n');
-      const to = 'info@landbaeckerei-oetzmann.de';
-      const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      // möglichst kompatibel auslösen
+  async function tryOpenMailto(href){
+    // 1) klassisch
+    try { window.location.href = href; } catch(_) {}
+    // 2) via open
+    try { window.open(href, '_self'); } catch(_) {}
+    // 3) via versteckter Link
+    try {
       const a = document.createElement('a');
       a.href = href;
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
       setTimeout(() => a.remove(), 0);
+    } catch(_) {}
+  }
+
+  function ensureFallbackLink(form, href){
+    let fb = form.querySelector('.mailto-fallback');
+    if (!fb) {
+      fb = document.createElement('a');
+      fb.className = 'mailto-fallback block mt-2 text-sm text-emerald-700 underline';
+      fb.target = '_self';
+      fb.rel = 'noopener';
+      fb.textContent = 'E-Mail hier öffnen (Fallback)';
+      form.appendChild(fb);
+    }
+    fb.href = href;
+    fb.style.display = 'inline';
+  }
+
+  function copyBodyToClipboard(body){
+    if (!navigator.clipboard) return false;
+    try { navigator.clipboard.writeText(body); return true; } catch(_) { return false; }
+  }
+
+  function attachMailto(selector, subject){
+    const form = document.querySelector(selector);
+    if (!form) return;
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+
+      const to = 'info@landbaeckerei-oetzmann.de';
+      const body = buildBodyFromForm(form);
+      const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Fallback-Link anzeigen (falls der Browser mailto blockt / kein Client eingerichtet ist)
+      ensureFallbackLink(form, href);
+
+      // Öffnen versuchen
+      await tryOpenMailto(href);
+
+      // Zusatz-Hinweis, falls sich sichtbar nichts tut:
+      // Wir geben dem Browser einen Moment; wenn der Nutzer auf der Seite bleibt,
+      // hat er vermutlich keinen Mailclient verknüpft. Dann kopieren wir den Inhalt.
+      setTimeout(()=>{
+        const ok = copyBodyToClipboard(body);
+        // dezenter Hinweis
+        const note = form.querySelector('.mailto-note') || document.createElement('div');
+        note.className = 'mailto-note text-xs text-neutral-600 mt-1';
+        note.textContent = ok
+          ? 'Hinweis: Falls kein E-Mail-Programm geöffnet wurde, wurde Ihre Nachricht in die Zwischenablage kopiert. Sie können sie in Ihr Mailprogramm einfügen.'
+          : 'Hinweis: Falls kein E-Mail-Programm geöffnet wurde, nutzen Sie bitte den Fallback-Link oben oder kopieren Sie die Felder manuell in Ihr E-Mail-Programm.';
+        if (!note.parentNode) form.appendChild(note);
+      }, 800);
     });
   }
 
-  // Kandidaten sammeln (funktioniert auch, wenn es nur manche IDs gibt)
-  (function () {
-    const pairs = [
-      ['#formContact',  'Anfrage Gasthaus Zur Eiche'],
-      ['#formBakery',   'Bestellung Bäckerei – Gasthaus Zur Eiche'],
-      ['#mailForm',     'Anfrage Gasthaus Zur Eiche'],
-      ['#contact form', 'Anfrage Gasthaus Zur Eiche'],
-      ['#baeckerei form','Bestellung Bäckerei – Gasthaus Zur Eiche'],
-    ];
+  // Beide Formulare anbinden (falls vorhanden)
+  attachMailto('#formContact', 'Anfrage Gasthaus Zur Eiche');
+  attachMailto('#formBakery',  'Bestellung Bäckerei – Gasthaus Zur Eiche');
 
-    const bound = new Set();
-    pairs.forEach(([sel, subj]) => {
-      const el = document.querySelector(sel);
-      if (el && !bound.has(el)) { attachMailto(el, subj); bound.add(el); }
-    });
-  })();
+  // Kompatibilität: falls noch ein altes #mailForm existiert
+  attachMailto('#mailForm', 'Anfrage Gasthaus Zur Eiche');
 </script>
 </body>
 </html>
