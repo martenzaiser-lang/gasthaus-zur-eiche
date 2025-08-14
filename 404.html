@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<title>Weiterleitung…</title>
+<meta name="robots" content="noindex">
+<script>
+  const map = {
+    "pension": "#lodging",
+    "lodging": "#lodging",
+    "baeckerei": "#baeckerei",
+    "feiern": "#feiern",
+    "saal": "#feiern",
+    "kontakt": "#contact",
+    "contact": "#contact"
+  };
+  const path = (location.pathname||"/").replace(/^\/+|\/+$/g,"").toLowerCase();
+  const anchor = map[path] || "";
+  location.replace("/" + (anchor ? anchor : ""));
+</script>
+<body><p>Weiterleitung…</p></body>
+</html>
