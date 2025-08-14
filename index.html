@@ -433,69 +433,63 @@
   <script>
   // Mobile Nav (defensiv)
   (function () {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn && mobileNav) {
-      menuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-      });
-    }
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('hidden'));
   })();
 
-  // Footer year
+  // Footer Jahr
   (function () {
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
   })();
 
-  // Mailto-Helfer: baut aus Formularfeldern eine E-Mail und öffnet das lokale Mail-Programm
-  function wireMailto(formId, subject) {
-    const form = document.getElementById(formId);
+  // --- Mailto-Formulare: robust, findet verschiedene Varianten automatisch ---
+  function attachMailto(form, subject) {
     if (!form) return;
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const fields = form.querySelectorAll('input, textarea');
+      const fields = form.querySelectorAll('input, textarea, select');
       const lines = [];
       fields.forEach(el => {
-        if (el.type === 'hidden') return;
-        const label = el.closest('label')?.querySelector('span')?.textContent?.trim() || el.name || 'Feld';
-        const val = (el.value || '').trim();
+        if (el.type === 'hidden' || el.type === 'submit' || el.disabled) return;
+        const label =
+          el.closest('label')?.querySelector('span')?.textContent?.trim() ||
+          el.previousElementSibling?.textContent?.trim() ||
+          el.name || 'Feld';
+        const val = (el.value || '').toString().trim();
         if (val) lines.push(label + ': ' + val);
       });
 
       const body = lines.join('\n');
-      const mail = 'info@landbaeckerei-oetzmann.de';
-      const href = `mailto:${encodeURIComponent(mail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const to = 'info@landbaeckerei-oetzmann.de';
+      const href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      window.location.href = href;
+      // möglichst kompatibel auslösen
+      const a = document.createElement('a');
+      a.href = href;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => a.remove(), 0);
     });
   }
 
-  // Beide Formulare aktivieren (NEU)
-  wireMailto('formContact', 'Anfrage Gasthaus Zur Eiche');
-  wireMailto('formBakery',  'Bestellung Bäckerei – Gasthaus Zur Eiche');
-
-  // Optional: Alte Logik entfernen
-  // Falls noch ein altes Formular mit id="mailForm" existiert, kannst du es entweder löschen
-  // oder – wenn du es behalten willst – hiermit ebenfalls anbinden:
+  // Kandidaten sammeln (funktioniert auch, wenn es nur manche IDs gibt)
   (function () {
-    const legacy = document.getElementById('mailForm');
-    if (!legacy) return;
-    legacy.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const fields = legacy.querySelectorAll('input, textarea');
-      const lines = [];
-      fields.forEach(el => {
-        if (el.type === 'hidden') return;
-        const label = el.previousElementSibling ? el.previousElementSibling.textContent : (el.name || 'Feld');
-        const val = (el.value || '').trim();
-        if (val) lines.push(label + ': ' + val);
-      });
-      const body = lines.join('\n');
-      const subject = 'Anfrage Gasthaus Zur Eiche';
-      window.location.href = `mailto:info@landbaeckerei-oetzmann.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const pairs = [
+      ['#formContact',  'Anfrage Gasthaus Zur Eiche'],
+      ['#formBakery',   'Bestellung Bäckerei – Gasthaus Zur Eiche'],
+      ['#mailForm',     'Anfrage Gasthaus Zur Eiche'],
+      ['#contact form', 'Anfrage Gasthaus Zur Eiche'],
+      ['#baeckerei form','Bestellung Bäckerei – Gasthaus Zur Eiche'],
+    ];
+
+    const bound = new Set();
+    pairs.forEach(([sel, subj]) => {
+      const el = document.querySelector(sel);
+      if (el && !bound.has(el)) { attachMailto(el, subj); bound.add(el); }
     });
   })();
 </script>
