@@ -33,36 +33,64 @@
   html { scroll-behavior: smooth }
   body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial }
 
-  /* Sanft lebendiger, schlichter Hintergrund */
+  /* Lebendiger, aber schlichter Seitenhintergrund */
   .site-bg{
-    background-color:#fafaf9; /* sehr helles Warmgrau */
+    background-color:#fafaf9; /* warmes Hellgrau */
     background-image:
-      radial-gradient(80rem 60rem at 12% -8%, rgba(16,185,129,.08), transparent 40%),
-      radial-gradient(60rem 40rem at 88% -6%, rgba(250,204,21,.12), transparent 38%),
-      radial-gradient(120rem 80rem at 50% 120%, rgba(14,165,233,.06), transparent 30%),
-      radial-gradient(2px 2px at 0 0, rgba(0,0,0,.02) 1px, transparent 1px); /* feine Körnung */
+      radial-gradient(120rem 90rem at 15% -10%, rgba(16,185,129,.10), transparent 45%),
+      radial-gradient(90rem 60rem at 85% -6%, rgba(250,204,21,.16), transparent 42%),
+      radial-gradient(120rem 100rem at 50% 120%, rgba(14,165,233,.12), transparent 40%),
+      radial-gradient(2px 2px at 0 0, rgba(0,0,0,.03) 1px, transparent 1px); /* feine Körnung */
     background-size:auto,auto,auto,6px 6px;
     background-attachment:fixed,fixed,fixed,scroll;
   }
 
-  /* Hero: weiche Farbwolken, subtil animiert */
-  .hero-blob{
-    position:absolute; inset:-30% -10% -20% -10%;
-    pointer-events:none; filter: blur(60px);
+  /* Hero: lebendige, weiche Farbwellen */
+  .hero-blob{ position:absolute; inset:-35% -15% -25% -15%; pointer-events:none; filter:blur(70px); opacity:.95; }
+  .hero-blob::before, .hero-blob::after{
+    content:""; position:absolute; inset:0;
     background:
-      radial-gradient(40% 30% at 25% 20%, rgba(16,185,129,.12), transparent 60%),
-      radial-gradient(35% 28% at 75% 18%, rgba(250,204,21,.14), transparent 62%),
-      radial-gradient(30% 26% at 55% 65%, rgba(14,165,233,.10), transparent 60%);
-    animation: floaty 22s ease-in-out infinite;
-    opacity:.9;
+      radial-gradient(40% 32% at 25% 22%, rgba(16,185,129,.22), transparent 60%),
+      radial-gradient(36% 30% at 78% 18%, rgba(250,204,21,.24), transparent 62%),
+      radial-gradient(32% 28% at 55% 70%, rgba(14,165,233,.20), transparent 60%);
+    animation: floatX 24s ease-in-out infinite;
+    mix-blend-mode:multiply;
   }
-  @keyframes floaty{
-    0%,100%{ transform: translateY(0) }
-    50%     { transform: translateY(-2%) }
+  .hero-blob::after{
+    transform: scale(1.05) rotate(8deg);
+    filter: blur(90px);
+    animation: floatY 28s ease-in-out infinite;
+    opacity:.85;
   }
+  @keyframes floatX{ 0%,100%{transform:translateX(0)} 50%{transform:translateX(-2%)} }
+  @keyframes floatY{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3%)} }
   @media (prefers-reduced-motion: reduce){
-    .hero-blob{ animation:none }
+    .hero-blob, .hero-blob::before, .hero-blob::after{ animation:none }
   }
+
+  /* „Section Halo“: dezente Lichtkante hinter wichtigen Abschnitten */
+  .halo{
+    position:relative;
+    isolation:isolate;
+  }
+  .halo::before{
+    content:""; position:absolute; inset:-6% -3%;
+    background: radial-gradient(60rem 30rem at 50% 0%, rgba(16,185,129,.08), transparent 60%);
+    filter: blur(40px);
+    z-index:-1;
+  }
+
+  /* Intensitäts-Presets (du kannst 1 wählen) */
+  .vibrant   .site-bg{ background-image:
+      radial-gradient(120rem 90rem at 15% -10%, rgba(16,185,129,.14), transparent 45%),
+      radial-gradient(90rem 60rem at 85% -6%, rgba(250,204,21,.20), transparent 42%),
+      radial-gradient(120rem 100rem at 50% 120%, rgba(14,165,233,.16), transparent 40%),
+      radial-gradient(2px 2px at 0 0, rgba(0,0,0,.035) 1px, transparent 1px); }
+  .calm     .site-bg{ background-image:
+      radial-gradient(120rem 90rem at 15% -10%, rgba(16,185,129,.06), transparent 45%),
+      radial-gradient(90rem 60rem at 85% -6%, rgba(250,204,21,.10), transparent 42%),
+      radial-gradient(120rem 100rem at 50% 120%, rgba(14,165,233,.08), transparent 40%),
+      radial-gradient(2px 2px at 0 0, rgba(0,0,0,.02) 1px, transparent 1px); }
 </style>
 
   <!-- Strukturierte Daten (LocalBusiness) -->
@@ -96,7 +124,7 @@
   }
   </script>
 </head>
-<body class="site-bg text-neutral-900">
+<body class="vibrant site-bg text-neutral-900">
 
   <!-- Header -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
