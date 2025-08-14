@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="de">
-<meta charset="utf-8">
-<title>Weiterleitung…</title>
-<meta name="robots" content="noindex">
-<script>
-  const map = {
-    "pension": "#lodging",
-    "lodging": "#lodging",
-    "baeckerei": "#baeckerei",
-    "feiern": "#feiern",
-    "saal": "#feiern",
-    "kontakt": "#contact",
-    "contact": "#contact"
-  };
-  const path = (location.pathname||"/").replace(/^\/+|\/+$/g,"").toLowerCase();
-  const anchor = map[path] || "";
-  location.replace("/" + (anchor ? anchor : ""));
-</script>
-<body><p>Weiterleitung…</p></body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seite nicht gefunden – Gasthaus zur Eiche</title>
+  <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
+</head>
+<body class="bg-neutral-50 text-neutral-900 flex items-center justify-center h-screen">
+  <div class="max-w-lg text-center px-4">
+    <h1 class="text-4xl font-bold mb-4">404 – Seite nicht gefunden</h1>
+    <p class="text-neutral-700 mb-6">
+      Diese Seite existiert leider nicht mehr oder der Link ist falsch.
+      Bitte nutze die Navigation oder gehe zurück zur Startseite.
+    </p>
+    <a href="/" class="px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">
+      Zur Startseite
+    </a>
+  </div>
+</body>
 </html>
