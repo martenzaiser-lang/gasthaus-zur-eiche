@@ -255,16 +255,14 @@
     </figure>
     <div>
       <h2 class="text-2xl md:text-3xl font-bold">Bäckerei</h2>
-      <p class="mt-4 text-neutral-700">In unserer Landbäckerei Oetzmann backen wir seit 1888 mit viel Zeit, Leidenschaft und Handarbeit. Ob frisches Brot, knusprige Brötchen oder süße Leckereien – wir setzen auf traditionelle Rezepte und regionale Zutaten.</p>
+      <p class="mt-4 text-neutral-700">
+        In unserer Landbäckerei Oetzmann backen wir seit 1888 mit viel Zeit, Leidenschaft und Handarbeit.
+        Ob frisches Brot, knusprige Brötchen oder süße Leckereien – wir setzen auf traditionelle Rezepte
+        und regionale Zutaten.
+      </p>
 
-      <!-- Formular: Bestellung/Anfrage direkt senden -->
-      <form action="https://www.gasthaus-zur-eiche.com/send.php" method="POST"
-            class="mt-6 p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3"
-            aria-label="Bäckerei-Bestellformular">
-
-        <!-- SPAM-Honeypot (unsichtbar) -->
-        <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
+      <!-- Formular: Bestellung/Anfrage per E-Mail (mailto) -->
+      <form id="formBakery" class="mt-6 p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3" aria-label="Bäckerei-Bestellformular">
         <label class="grid gap-1">
           <span class="text-sm">Ihr Name*</span>
           <input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" name="name" required placeholder="Vor- und Nachname">
@@ -280,23 +278,18 @@
           <textarea class="px-3 py-2 rounded-xl border border-neutral-300 bg-white min-h-[120px]" name="message" required placeholder="z. B. 3 Meterbrote, Abholung Sa. 10 Uhr"></textarea>
         </label>
 
-        <input type="hidden" name="page" value="baeckerei">
-
         <button class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">
           Senden
         </button>
-        <p class="text-xs text-neutral-500">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu.</p>
       </form>
 
-      <!-- Social Media Icons -->
+      <!-- Social Media -->
       <div class="flex items-center gap-4 mt-6">
-        <!-- Instagram -->
         <a href="https://www.instagram.com/landbaeckereioetzmann/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-neutral-600 hover:text-emerald-700">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+          <!-- dein SVG-Icon -->
         </a>
-        <!-- Facebook -->
         <a href="https://www.facebook.com/GeorgOetzmann" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-neutral-600 hover:text-emerald-700">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M13 3h4a1 1 0 0 1 1 1v4h-3a1 1 0 0 0-1 1v3h4l-1 4h-3v7h-4v-7H8v-4h3V9a5 5 0 0 1 5-5z"/></svg>
+          <!-- dein SVG-Icon -->
         </a>
       </div>
     </div>
@@ -356,12 +349,7 @@
         </div>
 
         <!-- „Formular“ erzeugt Mailto -->
-<form action="https://www.gasthaus-zur-eiche.com/send.php" method="POST"
-      class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3"
-      aria-label="Kontaktformular">
-
-  <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
+<form id="formContact" class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3" aria-label="Kontaktformular">
   <label class="grid gap-1">
     <span class="text-sm">Ihr Name*</span>
     <input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" name="name" required placeholder="Vor- und Nachname">
@@ -382,12 +370,10 @@
     <textarea class="px-3 py-2 rounded-xl border border-neutral-300 bg-white min-h-[120px]" name="message" required placeholder="Ihre Wünsche, Zeiten, Besonderheiten …"></textarea>
   </label>
 
-  <input type="hidden" name="page" value="kontakt">
-
   <button class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">
-    Anfrage senden
+    Anfrage erstellen
   </button>
-  <p class="text-xs text-neutral-500">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu.</p>
+  <p class="text-xs text-neutral-500">Der Button öffnet Ihr E-Mail-Programm mit einer vorbefüllten Nachricht.</p>
 </form>
       </div>
     </div>
@@ -445,27 +431,73 @@
   </section>
 
   <script>
-    // Mobile Nav
-    document.getElementById('menuBtn').addEventListener('click',()=>{
-      const el = document.getElementById('mobileNav');
-      el.classList.toggle('hidden');
-    });
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mailto form
-    const form = document.getElementById('mailForm');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const fields = form.querySelectorAll('input, textarea');
-      const pairs = Array.from(fields).map(el=>{
-        const label = el.previousElementSibling ? el.previousElementSibling.textContent : (el.name||'Feld');
-        return `${label}: ${el.value}`;
+  // Mobile Nav (defensiv)
+  (function () {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
       });
-      const body = pairs.join('\n');
+    }
+  })();
+
+  // Footer year
+  (function () {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+
+  // Mailto-Helfer: baut aus Formularfeldern eine E-Mail und öffnet das lokale Mail-Programm
+  function wireMailto(formId, subject) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const fields = form.querySelectorAll('input, textarea');
+      const lines = [];
+      fields.forEach(el => {
+        if (el.type === 'hidden') return;
+        const label = el.closest('label')?.querySelector('span')?.textContent?.trim() || el.name || 'Feld';
+        const val = (el.value || '').trim();
+        if (val) lines.push(label + ': ' + val);
+      });
+
+      const body = lines.join('\n');
+      const mail = 'info@landbaeckerei-oetzmann.de';
+      const href = `mailto:${encodeURIComponent(mail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = href;
+    });
+  }
+
+  // Beide Formulare aktivieren (NEU)
+  wireMailto('formContact', 'Anfrage Gasthaus Zur Eiche');
+  wireMailto('formBakery',  'Bestellung Bäckerei – Gasthaus Zur Eiche');
+
+  // Optional: Alte Logik entfernen
+  // Falls noch ein altes Formular mit id="mailForm" existiert, kannst du es entweder löschen
+  // oder – wenn du es behalten willst – hiermit ebenfalls anbinden:
+  (function () {
+    const legacy = document.getElementById('mailForm');
+    if (!legacy) return;
+    legacy.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const fields = legacy.querySelectorAll('input, textarea');
+      const lines = [];
+      fields.forEach(el => {
+        if (el.type === 'hidden') return;
+        const label = el.previousElementSibling ? el.previousElementSibling.textContent : (el.name || 'Feld');
+        const val = (el.value || '').trim();
+        if (val) lines.push(label + ': ' + val);
+      });
+      const body = lines.join('\n');
       const subject = 'Anfrage Gasthaus Zur Eiche';
       window.location.href = `mailto:info@landbaeckerei-oetzmann.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
-  </script>
+  })();
+</script>
 </body>
 </html>
