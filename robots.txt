@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap hilft Google & Co., die Seitenstruktur zu verstehen
-Sitemap: https://www.gasthaus-zur-eiche.net/sitemap.xml
+Sitemap: https://gasthaus-zur-eiche.net/sitemap.xml
