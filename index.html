@@ -2,54 +2,78 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Gasthaus zur Eiche – Pension, Feiern & Landbäckerei in Edendorf</title>
-<meta name="description" content="Gasthaus zur Eiche in Edendorf: Pension, Saal für Feiern und die Landbäckerei Oetzmann. Ideal für Hochzeiten, Geburtstage, Firmenfeiern und Urlaub in der Lüneburger Heide.">
-
-<!-- Strukturierte Daten für Google -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Gasthaus zur Eiche",
-  "image": "https://www.gasthaus-zur-eiche.net/assets/haus.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Hufeisenstraße 2",
-    "addressLocality": "Edendorf",
-    "postalCode": "29553",
-    "addressCountry": "DE"
-  },
-  "telephone": "+49 5823 7560",
-  "url": "https://www.gasthaus-zur-eiche.net",
-  "sameAs": [
-    "https://www.instagram.com/landbaeckerei_oetzmann/",
-    "https://www.facebook.com/LandbaeckereiOetzmann"
-  ]
-}
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gasthaus – Pension – Bäckerei „Zur Eiche“ · Edendorf</title>
-  <meta name="description" content="Familiengeführtes Gasthaus mit Saal (nur nach Absprache), Pension und Bäckerei auf Vorbestellung in Edendorf, Bienenbüttel – Lüneburger Heide." />
+
+  <!-- Kanonische URL -->
+  <link rel="canonical" href="https://www.gasthaus-zur-eiche.net/"/>
+
+  <!-- SEO: Titel & Beschreibung -->
+  <title>Gasthaus zur Eiche – Pension, Feiern & Landbäckerei in Edendorf</title>
+  <meta name="description" content="Gasthaus zur Eiche in Edendorf: Pension, Saal für Feiern und die Landbäckerei Oetzmann. Ideal für Hochzeiten, Geburtstage, Firmenfeiern und Urlaub in der Lüneburger Heide.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Gasthaus zur Eiche – Pension, Feiern & Landbäckerei in Edendorf" />
+  <meta property="og:description" content="Familiengeführtes Gasthaus mit Saal (nach Absprache), Pension & Landbäckerei Oetzmann – Edendorf / Lüneburger Heide." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gasthaus-zur-eiche.net/" />
+  <meta property="og:image" content="https://www.gasthaus-zur-eiche.net/assets/og-eiche.jpg" />
+  <meta property="og:locale" content="de_DE"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- Schrift & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta property="og:title" content="Gasthaus – Pension – Bäckerei Zur Eiche" />
-  <meta property="og:description" content="Saal für Feiern nach Absprache · Pension · Bäckerei auf Vorbestellung – Edendorf / Bienenbüttel" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og-eiche.jpg" />
-  <link rel="icon" href="/assets/favicon.ico" />
+
   <style>
     html { scroll-behavior: smooth }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial }
+    /* Bessere Fokus-Sichtbarkeit */
+    a:focus-visible, button:focus-visible { outline: 2px solid #047857; outline-offset: 2px; border-radius: 8px; }
   </style>
+
+  <!-- Strukturierte Daten (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gasthaus zur Eiche",
+    "image": "https://www.gasthaus-zur-eiche.net/assets/haus.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hufeisenstraße 2",
+      "addressLocality": "Bienenbüttel",
+      "addressRegion": "Niedersachsen",
+      "postalCode": "29553",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 5823 7560",
+    "url": "https://www.gasthaus-zur-eiche.net",
+    "sameAs": [
+      "https://www.instagram.com/landbaeckereioetzmann/",
+      "https://www.facebook.com/GeorgOetzmann"
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59",
+      "description": "Saal & Gaststube nur nach Absprache geöffnet."
+    }]
+  }
+  </script>
 </head>
 <body class="bg-neutral-50 text-neutral-900">
+
   <!-- Header -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-neutral-200">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3">
-        <img src="/assets/logo-eiche.png" alt="Logo Zur Eiche" class="w-40 h-40 rounded-xl object-contain"/>
+      <a href="#home" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <img src="/assets/logo-eiche.png" alt="Logo Gasthaus zur Eiche" class="w-40 h-40 rounded-xl object-contain" loading="lazy" decoding="async"/>
         <div class="leading-tight">
           <p class="font-semibold tracking-wide">Gasthaus – Pension – Bäckerei</p>
           <p class="text-sm text-neutral-600 font-medium">Zur Eiche · Edendorf</p>
@@ -57,24 +81,25 @@
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#about" class="hover:text-emerald-700">Über uns</a>
-        <a href="#events" class="hover:text-emerald-700">Feiern & Saal</a>
+        <a href="#feiern" class="hover:text-emerald-700">Feiern & Saal</a>
         <a href="#lodging" class="hover:text-emerald-700">Pension</a>
         <a href="#preise" class="hover:text-emerald-700">Preise</a>
-        <a href="#bakery" class="hover:text-emerald-700">Bäckerei</a>
-        <a href="/#umgebung" class="hover:underline">Umgebung</a>
+        <a href="#baeckerei" class="hover:text-emerald-700">Bäckerei</a>
+        <a href="#umgebung" class="hover:text-emerald-700">Umgebung</a>
         <a href="#contact" class="px-3 py-1.5 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">Anfragen</a>
       </nav>
-      <button class="md:hidden" id="menuBtn" aria-label="Menü">
+      <button class="md:hidden" id="menuBtn" aria-label="Menü öffnen">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
     <div id="mobileNav" class="hidden md:hidden border-t border-neutral-200">
       <div class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm">
         <a href="#about" class="py-2">Über uns</a>
-        <a href="#events" class="py-2">Feiern & Saal</a>
+        <a href="#feiern" class="py-2">Feiern & Saal</a>
         <a href="#lodging" class="py-2">Pension</a>
         <a href="#preise"  class="py-2">Preise</a>
-        <a href="#bakery" class="py-2">Bäckerei</a>
+        <a href="#baeckerei" class="py-2">Bäckerei</a>
+        <a href="#umgebung" class="py-2">Umgebung</a>
         <a href="#contact" class="px-3 py-2 rounded-xl bg-emerald-700 text-white text-center">Anfragen</a>
       </div>
     </div>
@@ -84,14 +109,12 @@
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(45rem_circle_at_10%_10%,#d1fae5,transparent_30%),radial-gradient(35rem_circle_at_90%_10%,#fde68a,transparent_25%)] opacity-60"></div>
     <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 relative">
-      <h1 class="text-3xl md:text-4xl font-bold">
-  Gasthaus zur Eiche – Pension & Landbäckerei in Edendorf
-</h1>
+      <h1 class="text-3xl md:text-4xl font-bold">Gasthaus zur Eiche – Pension & Landbäckerei in Edendorf</h1>
       <p class="mt-4 md:text-lg max-w-2xl text-neutral-700">
         Familiengeführt seit Generationen – mitten in der Lüneburger Heide. Unser Gasthaus und Saal öffnen wir <strong>für geschlossene Gesellschaften nach Absprache</strong>. Im Alltag bleibt das Gasthaus geschlossen.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#events" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">Feiern planen</a>
+        <a href="#feiern" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">Feiern planen</a>
         <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-300 hover:bg-white">Anfrage senden</a>
       </div>
     </div>
@@ -110,52 +133,43 @@
         </ul>
       </div>
       <figure class="aspect-[4/3] w-full rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
-        <img alt="Gasthaus Zur Eiche – Außenansicht" src="/assets/foto-haus-1.jpg" class="w-full h-full object-cover"/>
+        <img src="/assets/foto-haus-1.jpg" alt="Außenansicht des Gasthaus Zur Eiche in Edendorf" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
       </figure>
     </div>
   </section>
 
- <!-- Feiern & Saal -->
-<section id="feiern" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-  <div>
-    <h2 class="text-2xl md:text-3xl font-bold">Feiern &amp; Saal</h2>
-    <p class="mt-4 text-neutral-700">
-      Ob festlich oder familiär – wir bieten den passenden Rahmen für Ihre Veranstaltung.
-    </p>
+  <!-- Feiern & Saal -->
+  <section id="feiern" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold">Feiern &amp; Saal</h2>
+      <p class="mt-4 text-neutral-700">Ob festlich oder familiär – wir bieten den passenden Rahmen für Ihre Veranstaltung.</p>
 
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <!-- Hochzeiten -->
-      <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
-        <h3 class="font-semibold">Hochzeiten</h3>
-        <p class="text-sm text-neutral-700 mt-2">Empfang, Menü oder Buffet – auf Wunsch mit Kaffeetafel.</p>
-      </div>
-
-      <!-- Geburtstage -->
-      <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
-        <h3 class="font-semibold">Geburtstage</h3>
-        <p class="text-sm text-neutral-700 mt-2">Feiern Sie mit Familie und Freunden – individuell gestaltbar.</p>
-      </div>
-
-      <!-- Firmenfeiern -->
-      <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
-        <h3 class="font-semibold">Firmenfeiern</h3>
-        <p class="text-sm text-neutral-700 mt-2">Ob Jahresabschluss oder Jubiläum – wir sorgen für den passenden Rahmen.</p>
-      </div>
-
-      <!-- Trauerfeiern -->
-      <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
-        <h3 class="font-semibold">Trauerfeiern</h3>
-        <p class="text-sm text-neutral-700 mt-2">Würdevoller Rahmen mit Kaffeetafel oder Buffet, individuell nach Ihren Wünschen.</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
+          <h3 class="font-semibold">Hochzeiten</h3>
+          <p class="text-sm text-neutral-700 mt-2">Empfang, Menü oder Buffet – auf Wunsch mit Kaffeetafel.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
+          <h3 class="font-semibold">Geburtstage</h3>
+          <p class="text-sm text-neutral-700 mt-2">Feiern Sie mit Familie und Freunden – individuell gestaltbar.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
+          <h3 class="font-semibold">Firmenfeiern</h3>
+          <p class="text-sm text-neutral-700 mt-2">Ob Jahresabschluss oder Jubiläum – wir sorgen für den passenden Rahmen.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50">
+          <h3 class="font-semibold">Trauerfeiern</h3>
+          <p class="text-sm text-neutral-700 mt-2">Würdevoller Rahmen mit Kaffeetafel oder Buffet, individuell nach Ihren Wünschen.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Pension -->
   <section id="lodging" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
     <div class="grid md:grid-cols-2 gap-10 items-start">
       <figure class="aspect-[4/3] w-full rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
-        <img alt="Pension Zimmer" src="/assets/foto-zimmer-1.jpg" class="w-full h-full object-cover"/>
+        <img src="/assets/foto-zimmer-1.jpg" alt="Doppelzimmer in der Pension des Gasthaus zur Eiche in Edendorf" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
       </figure>
       <div>
         <h2 class="text-2xl md:text-3xl font-bold">Pension</h2>
@@ -165,148 +179,91 @@
     </div>
   </section>
 
-    <!-- Preise -->
-<section id="preise" class="max-w-6xl mx-auto px-4 py-16">
-  <h2 class="text-2xl md:text-3xl font-bold mb-6">Preise 2025</h2>
-  <div class="overflow-x-auto">
-    <table class="min-w-full border border-gray-300">
-      <thead class="bg-emerald-700 text-white">
-        <tr>
-          <th class="px-4 py-2 text-left">Kategorie</th>
-          <th class="px-4 py-2 text-left">Preis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-t">
-          <td class="px-4 py-2">DZ – 1-3 Nächte</td>
-          <td class="px-4 py-2">78,00 € inkl. Frühstück</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">DZ – ab 4 Nächte</td>
-          <td class="px-4 py-2">68,00 € inkl. Frühstück</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">EZ – 1-3 Nächte</td>
-          <td class="px-4 py-2">51,00 € inkl. Frühstück</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">EZ – ab 4 Nächte</td>
-          <td class="px-4 py-2">46,00 € inkl. Frühstück</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Fewo (2 Pers.) – 1-6 Nächte</td>
-          <td class="px-4 py-2">70,00 € + einmalig 25 € Endreinigung</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Fewo (2 Pers.) – ab 7 Nächte</td>
-          <td class="px-4 py-2">60,00 € + einmalig 25 € Endreinigung</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Fewo (3 Pers.) – 1-6 Nächte</td>
-          <td class="px-4 py-2">90,00 € + einmalig 25 € Endreinigung</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Fewo (3 Pers.) – ab 7 Nächte</td>
-          <td class="px-4 py-2">75,00 € + einmalig 25 € Endreinigung</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Hund pro Nacht</td>
-          <td class="px-4 py-2">5,00 €</td>
-        </tr>
-        <tr class="border-t">
-          <td class="px-4 py-2">Frühstück pro Person</td>
-          <td class="px-4 py-2">8,50 €</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- Bäckerei -->
-<section id="baeckerei" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-  <div class="grid md:grid-cols-2 gap-10 items-start">
-    <figure class="w-full max-w-md mx-auto rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
-      <img alt="Bäckerei" src="/assets/baeckerei.jpg" class="w-full h-auto object-contain"/>
-    </figure>
-    <div>
-      <h2 class="text-2xl md:text-3xl font-bold">Bäckerei</h2>
-      <p class="mt-4 text-neutral-700">In unserer Landbäckerei Oetzmann backen wir seit 1888 mit viel Zeit, Leidenschaft und Handarbeit. Ob frisches Brot, knusprige Brötchen oder süße Leckereien – wir setzen auf traditionelle Rezepte und regionale Zutaten.</p>
-      
-      <!-- Bestell-Button -->
-      <a href="mailto:info@landbaeckerei-oetzmann.de?subject=Bestellung%20Landbäckerei%20Oetzmann" 
-         class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">
-        Jetzt bestellen
-      </a>
-
-      <!-- Social Media Icons -->
-      <div class="flex items-center gap-4 mt-6">
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/landbaeckereioetzmann/" 
-           target="_blank" rel="noopener noreferrer" aria-label="Instagram" 
-           class="text-neutral-600 hover:text-emerald-700">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-          </svg>
-        </a>
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/GeorgOetzmann" 
-           target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
-           class="text-neutral-600 hover:text-emerald-700">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M13 3h4a1 1 0 0 1 1 1v4h-3a1 1 0 0 0-1 1v3h4l-1 4h-3v7h-4v-7H8v-4h3V9a5 5 0 0 1 5-5z"/>
-          </svg>
-        </a>
-      </div>
+  <!-- Preise -->
+  <section id="preise" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Preise 2025</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300">
+        <thead class="bg-emerald-700 text-white">
+          <tr><th class="px-4 py-2 text-left">Kategorie</th><th class="px-4 py-2 text-left">Preis</th></tr>
+        </thead>
+        <tbody>
+          <tr class="border-t"><td class="px-4 py-2">DZ – 1-3 Nächte</td><td class="px-4 py-2">78,00 € inkl. Frühstück</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">DZ – ab 4 Nächte</td><td class="px-4 py-2">68,00 € inkl. Frühstück</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">EZ – 1-3 Nächte</td><td class="px-4 py-2">51,00 € inkl. Frühstück</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">EZ – ab 4 Nächte</td><td class="px-4 py-2">46,00 € inkl. Frühstück</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Fewo (2 Pers.) – 1-6 Nächte</td><td class="px-4 py-2">70,00 € + einmalig 25 € Endreinigung</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Fewo (2 Pers.) – ab 7 Nächte</td><td class="px-4 py-2">60,00 € + einmalig 25 € Endreinigung</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Fewo (3 Pers.) – 1-6 Nächte</td><td class="px-4 py-2">90,00 € + einmalig 25 € Endreinigung</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Fewo (3 Pers.) – ab 7 Nächte</td><td class="px-4 py-2">75,00 € + einmalig 25 € Endreinigung</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Hund pro Nacht</td><td class="px-4 py-2">5,00 €</td></tr>
+          <tr class="border-t"><td class="px-4 py-2">Frühstück pro Person</td><td class="px-4 py-2">8,50 €</td></tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- Umgebung -->
-    <section id="umgebung" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
-      <div class="grid md:grid-cols-2 gap-10 items-start">
-        <figure class="aspect-[4/3] w-full rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
-          <img alt="Umgebung Edendorf" src="/assets/umgebung.jpg" class="w-full h-full object-cover"/>
-        </figure>
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Umgebung</h2>
-          <p class="mt-4 text-neutral-700">
-            Rund um Edendorf gibt es viel zu entdecken: Lüneburger Heide, Ilmenau, sowie die Städte Lüneburg, Uelzen und Bad Bevensen.
-            Radfahrer und Wanderer finden zahlreiche gut ausgebaute Strecken.
-          </p>
-          <ul class="mt-4 list-disc list-inside text-neutral-700">
-            <li>
-              <a href="https://www.lueneburger-heide.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
-                Rad- und Wanderwege in der Lüneburger Heide
-              </a>
-            </li>
-            <li>
-              <a href="https://www.uelzen.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
-                Stadt Uelzen – Sehenswürdigkeiten & Märkte
-              </a>
-            </li>
-            <li>
-              <a href="https://www.lueneburg.info/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
-                Stadt Lüneburg – Historische Altstadt
-              </a>
-            </li>
-            <li>
-              <a href="https://www.bad-bevensen.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">
-                Kurstadt Bad Bevensen – Therme & Parks
-              </a>
-            </li>
-          </ul>
+  <!-- Bäckerei -->
+  <section id="baeckerei" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <figure class="w-full max-w-md mx-auto rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
+        <img src="/assets/baeckerei.jpg" alt="Backstube der Landbäckerei Oetzmann in Edendorf" class="w-full h-auto object-contain" loading="lazy" decoding="async"/>
+      </figure>
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Bäckerei</h2>
+        <p class="mt-4 text-neutral-700">In unserer Landbäckerei Oetzmann backen wir seit 1888 mit viel Zeit, Leidenschaft und Handarbeit. Ob frisches Brot, knusprige Brötchen oder süße Leckereien – wir setzen auf traditionelle Rezepte und regionale Zutaten.</p>
+
+        <!-- Bestell-Button -->
+        <a href="mailto:info@landbaeckerei-oetzmann.de?subject=Bestellung%20Landbäckerei%20Oetzmann"
+           class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">
+          Jetzt bestellen
+        </a>
+
+        <!-- Social Media Icons -->
+        <div class="flex items-center gap-4 mt-6">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/landbaeckereioetzmann/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-neutral-600 hover:text-emerald-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+          </a>
+          <!-- Facebook (wie bei dir genutzt) -->
+          <a href="https://www.facebook.com/GeorgOetzmann" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-neutral-600 hover:text-emerald-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M13 3h4a1 1 0 0 1 1 1v4h-3a1 1 0 0 0-1 1v3h4l-1 4h-3v7h-4v-7H8v-4h3V9a5 5 0 0 1 5-5z"/></svg>
+          </a>
         </div>
       </div>
-    </section>
-  
+    </div>
+  </section>
+
+  <!-- Umgebung -->
+  <section id="umgebung" class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <figure class="aspect-[4/3] w-full rounded-2xl bg-neutral-200 shadow-sm overflow-hidden">
+        <img src="/assets/umgebung.jpg" alt="Landschaft in der Umgebung von Edendorf in der Lüneburger Heide" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+      </figure>
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Umgebung</h2>
+        <p class="mt-4 text-neutral-700">
+          Rund um Edendorf gibt es viel zu entdecken: Lüneburger Heide, Ilmenau, sowie die Städte Lüneburg, Uelzen und Bad Bevensen.
+          Radfahrer und Wanderer finden zahlreiche gut ausgebaute Strecken.
+        </p>
+        <ul class="mt-4 list-disc list-inside text-neutral-700">
+          <li><a href="https://www.lueneburger-heide.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Rad- und Wanderwege in der Lüneburger Heide</a></li>
+          <li><a href="https://www.uelzen.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Stadt Uelzen – Sehenswürdigkeiten & Märkte</a></li>
+          <li><a href="https://www.lueneburg.info/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Stadt Lüneburg – Historische Altstadt</a></li>
+          <li><a href="https://www.bad-bevensen.de/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Kurstadt Bad Bevensen – Therme & Parks</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Galerie -->
   <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
     <h2 class="text-2xl md:text-3xl font-bold">Einblicke</h2>
     <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-      <img alt="Impression 1" src="/assets/foto-haus-2.jpg" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200"/>
-      <img alt="Impression 2" src="/assets/foto-saal-1.jpg" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200"/>
-      <img alt="Impression 3" src="/assets/foto-baeckerei-1.jpg" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200"/>
-      <img alt="Impression 4" src="/assets/foto-umgebung-1.jpg" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200"/>
+      <img src="/assets/foto-haus-2.jpg" alt="Weitere Außenansicht des Gasthauses Zur Eiche" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200" loading="lazy" decoding="async"/>
+      <img src="/assets/foto-saal-1.jpg" alt="Saal für Feiern im Gasthaus Zur Eiche" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200" loading="lazy" decoding="async"/>
+      <img src="/assets/foto-baeckerei-1.jpg" alt="Backwaren aus der Landbäckerei Oetzmann" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200" loading="lazy" decoding="async"/>
+      <img src="/assets/foto-umgebung-1.jpg" alt="Impression aus der Umgebung Edendorf" class="aspect-[4/3] w-full rounded-xl object-cover bg-neutral-200" loading="lazy" decoding="async"/>
     </div>
   </section>
 
@@ -319,22 +276,24 @@
           <p class="text-neutral-700">Hufeisenstraße 2 · 29553 Bienenbüttel (OT Edendorf)</p>
           <div class="flex flex-col gap-2">
             <a href="tel:+4958237560" class="hover:underline">Telefon: 05823 7560</a>
-            <a href="mailto:info@landbaeckerei-oetzmann.de" class="hover:underline">E‑Mail: info@landbaeckerei-oetzmann.de</a>
+            <a href="mailto:info@landbaeckerei-oetzmann.de" class="hover:underline">E-Mail: info@landbaeckerei-oetzmann.de</a>
           </div>
-          <a href="https://maps.google.com/?q=Hufeisenstraße%202,%2029553%20Bienenbüttel" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 w-max">Route öffnen</a>
-          <p class="text-sm text-neutral-600">Bitte Anfragen möglichst per E‑Mail mit Datum, Personenanzahl und Anlass.</p>
+          <a href="https://maps.google.com/?q=Hufeisenstraße%202,%2029553%20Bienenbüttel" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 w-max">Route öffnen</a>
+          <p class="text-sm text-neutral-600">Bitte Anfragen möglichst per E-Mail mit Datum, Personenanzahl und Anlass.</p>
           <div class="flex items-center gap-4 pt-2 text-sm">
-            <a href="https://www.facebook.com/GeorgOetzmann" target="_blank" class="hover:underline">Facebook</a>
-            <a href="https://www.instagram.com/landbaeckereioetzmann" target="_blank" class="hover:underline">Instagram</a>
+            <a href="https://www.facebook.com/GeorgOetzmann" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
+            <a href="https://www.instagram.com/landbaeckereioetzmann/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
           </div>
         </div>
-        <form id="mailForm" class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3">
-          <label class="grid gap-1"><span class="text-sm">Ihr Name</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="Vor- und Nachname"/></label>
-          <label class="grid gap-1"><span class="text-sm">E‑Mail</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="name@mail.de" type="email"/></label>
-          <label class="grid gap-1"><span class="text-sm">Anlass & Termin</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="z. B. Hochzeit am 14.06., 60 Personen"/></label>
-          <label class="grid gap-1"><span class="text-sm">Nachricht</span><textarea class="px-3 py-2 rounded-xl border border-neutral-300 bg-white min-h-[120px]" placeholder="Ihre Wünsche, Zeiten, Besonderheiten …"></textarea></label>
+
+        <!-- „Formular“ erzeugt Mailto -->
+        <form id="mailForm" class="p-5 rounded-2xl border border-neutral-200 shadow-sm bg-neutral-50 grid gap-3" aria-label="Kontaktformular (öffnet Ihr E-Mail-Programm)">
+          <label class="grid gap-1"><span class="text-sm">Ihr Name</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="Vor- und Nachname" name="name"/></label>
+          <label class="grid gap-1"><span class="text-sm">E-Mail</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="name@mail.de" type="email" name="email"/></label>
+          <label class="grid gap-1"><span class="text-sm">Anlass & Termin</span><input class="px-3 py-2 rounded-xl border border-neutral-300 bg-white" placeholder="z. B. Hochzeit am 14.06., 60 Personen" name="occasion"/></label>
+          <label class="grid gap-1"><span class="text-sm">Nachricht</span><textarea class="px-3 py-2 rounded-xl border border-neutral-300 bg-white min-h-[120px]" placeholder="Ihre Wünsche, Zeiten, Besonderheiten …" name="message"></textarea></label>
           <button class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 text-white hover:bg-emerald-800">Anfrage erstellen</button>
-          <p class="text-xs text-neutral-500">Der Button erstellt eine E‑Mail in Ihrem Programm. Mit dem Absenden stimmen Sie unserem Datenschutzhinweis zu.</p>
+          <p class="text-xs text-neutral-500">Der Button erstellt eine E-Mail in Ihrem Programm. Mit dem Absenden stimmen Sie unserem Datenschutzhinweis zu.</p>
         </form>
       </div>
     </div>
@@ -364,7 +323,7 @@
     </div>
     <div class="border-t border-neutral-200 py-4 text-center text-neutral-600">© <span id="year"></span> Zur Eiche · Edendorf</div>
   </footer>
-  
+
   <!-- Rechtliches -->
   <section id="impressum" class="max-w-6xl mx-auto px-4 py-10">
     <h2 class="text-2xl font-bold">Impressum</h2>
@@ -373,17 +332,17 @@
       <p>Inhaber: Georg Oetzmann</p>
       <p>Hufeisenstraße 2, 29553 Bienenbüttel (OT Edendorf)</p>
       <p>Telefon: 05823 / 7560 · Fax: 05823 / 953471</p>
-      <p>E‑Mail: <a class="underline" href="mailto:info@landbaeckerei-oetzmann.de">info@landbaeckerei-oetzmann.de</a></p>
-      <p>USt‑IdNr.: DE116667569</p>
+      <p>E-Mail: <a class="underline" href="mailto:info@landbaeckerei-oetzmann.de">info@landbaeckerei-oetzmann.de</a></p>
+      <p>USt-IdNr.: DE116667569</p>
     </div>
     <p class="mt-3 text-sm text-neutral-600">Verantwortlich i.S.d. § 18 Abs. 2 MStV: Georg Oetzmann, Hufeisenstraße 2, 29553 Bienenbüttel.</p>
   </section>
   <section id="datenschutz" class="max-w-6xl mx-auto px-4 pb-16">
     <h2 class="text-2xl font-bold">Datenschutzhinweise</h2>
-    <p class="mt-2 text-neutral-700">Verantwortlicher: Landbäckerei Oetzmann, Inhaber: Georg Oetzmann, Hufeisenstraße 2, 29553 Bienenbüttel, Telefon 05823/7560, E‑Mail: info@landbaeckerei-oetzmann.de.</p>
+    <p class="mt-2 text-neutral-700">Verantwortlicher: Landbäckerei Oetzmann, Inhaber: Georg Oetzmann, Hufeisenstraße 2, 29553 Bienenbüttel, Telefon 05823/7560, E-Mail: info@landbaeckerei-oetzmann.de.</p>
     <ul class="mt-3 list-disc pl-6 text-neutral-700 space-y-2">
-      <li><strong>Server-Logs:</strong> Beim Aufruf der Website werden technisch notwendige Daten (IP‑Adresse, Datum/Uhrzeit, aufgerufene Seiten) für max. 7 Tage gespeichert, um den sicheren Betrieb zu gewährleisten.</li>
-      <li><strong>Kontakt per E‑Mail:</strong> Über das Formular wird eine E‑Mail in Ihrem E‑Mail‑Programm erstellt (<em>mailto</em>). Die angegebenen Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage.</li>
+      <li><strong>Server-Logs:</strong> Beim Aufruf der Website werden technisch notwendige Daten (IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten) für max. 7 Tage gespeichert, um den sicheren Betrieb zu gewährleisten.</li>
+      <li><strong>Kontakt per E-Mail:</strong> Über das Formular wird eine E-Mail in Ihrem E-Mail-Programm erstellt (<em>mailto</em>). Die angegebenen Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage.</li>
       <li><strong>Rechtsgrundlagen:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertrag/Anfrage) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem Betrieb).</li>
       <li><strong>Speicherdauer:</strong> Anfragen löschen wir, sobald sie erledigt sind, gesetzliche Aufbewahrungspflichten bleiben unberührt.</li>
       <li><strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit sowie Beschwerde bei einer Aufsichtsbehörde.</li>
@@ -399,14 +358,19 @@
     });
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
     // Mailto form
     const form = document.getElementById('mailForm');
     form.addEventListener('submit', function(e){
       e.preventDefault();
       const fields = form.querySelectorAll('input, textarea');
-      const values = Array.from(fields).map(el=>`${el.previousElementSibling?el.previousElementSibling.textContent:el.name}: ${el.value}`).join('\n');
+      const pairs = Array.from(fields).map(el=>{
+        const label = el.previousElementSibling ? el.previousElementSibling.textContent : (el.name||'Feld');
+        return `${label}: ${el.value}`;
+      });
+      const body = pairs.join('\n');
       const subject = 'Anfrage Gasthaus Zur Eiche';
-      window.location.href = `mailto:info@landbaeckerei-oetzmann.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(values)}`;
+      window.location.href = `mailto:info@landbaeckerei-oetzmann.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   </script>
 </body>
