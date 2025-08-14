@@ -1,0 +1,6 @@
+# robots.txt für Gasthaus zur Eiche
+User-agent: *
+Allow: /
+
+# Sitemap hilft Google & Co., die Seitenstruktur zu verstehen
+Sitemap: https://www.gasthaus-zur-eiche.net/sitemap.xml
